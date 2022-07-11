@@ -14,12 +14,12 @@ public class ReadExcelTest {
     @Interpolate(substitutor = FakerDataSubstitutor.class)
     @Data
     @DataFile(fileName = "TestData.xlsx", sheetName = "Yahoo")
-    static class SampleExcel1 {
+    static class TestData {
         @Key(name = "First Name")
         String firstName;
         @Key(name = "Last Name")
         String lastName;
-        @Key(name = "DOB",format = "MM-dd-yyyy")
+        @Key(name = "DOB", format = "MM-dd-yyyy")
         LocalDate dob;
         String location;
 
@@ -27,7 +27,7 @@ public class ReadExcelTest {
 
     @Test
     public void interpolateExcelMapperTest() {
-        Stream<SampleExcel1> excelStream = ExcelMapper.parse(SampleExcel1.class);
-        excelStream.forEach(System.out::println);
+        Stream<TestData> dataStream = ExcelMapper.parse(TestData.class);
+        dataStream.forEach(System.out::println);
     }
 }
