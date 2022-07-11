@@ -22,6 +22,7 @@ public class ReadExcelTest {
         @Key(name = "DOB",format = "MM-dd-yyyy")
         LocalDate dob;
         String location;
+
     }
 
     @Test
