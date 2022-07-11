@@ -4,14 +4,14 @@ import io.github.selcukes.databind.annotation.DataFile;
 import io.github.selcukes.databind.annotation.Interpolate;
 import io.github.selcukes.databind.annotation.Key;
 import io.github.selcukes.databind.excel.ExcelMapper;
-import io.github.selcukes.databind.substitute.StringSubstitutor;
 import lombok.Data;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.util.stream.Stream;
 
 public class ReadExcelTest {
-    @Interpolate(substitutor = StringSubstitutor.class)
+    @Interpolate(substitutor = FakerDataSubstitutor.class)
     @Data
     @DataFile(fileName = "TestData.xlsx", sheetName = "Yahoo")
     static class SampleExcel1 {
@@ -19,6 +19,9 @@ public class ReadExcelTest {
         String firstName;
         @Key(name = "Last Name")
         String lastName;
+        @Key(name = "DOB",format = "MM-dd-yyyy")
+        LocalDate dob;
+        String location;
     }
 
     @Test
