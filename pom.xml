@@ -6,25 +6,33 @@
     <artifactId>selcukes-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <selcukes.version>2.1.5</selcukes.version>
+        <selcukes.version>2.1.6</selcukes.version>
         <lombok.version>1.18.24</lombok.version>
         <slf4j.version>2.18.0</slf4j.version>
-        <junit.jupiter.version>5.8.2</junit.jupiter.version>
-        <selcukes.faker.version>0.0.1</selcukes.faker.version>
+        <junit.jupiter.version>5.9.0</junit.jupiter.version>
 
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.github.selcukes</groupId>
+                <artifactId>selcukes-bom</artifactId>
+                <version>${selcukes.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <dependencies>
         <dependency>
             <groupId>io.github.selcukes</groupId>
             <artifactId>selcukes-databind</artifactId>
-            <version>${selcukes.version}</version>
         </dependency>
         <dependency>
             <groupId>io.github.selcukes</groupId>
             <artifactId>selcukes-faker</artifactId>
-            <version>${selcukes.faker.version}</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
