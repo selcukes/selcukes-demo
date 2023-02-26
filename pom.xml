@@ -28,11 +28,7 @@
     <dependencies>
         <dependency>
             <groupId>io.github.selcukes</groupId>
-            <artifactId>selcukes-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.github.selcukes</groupId>
-            <artifactId>selcukes-databind</artifactId>
+            <artifactId>selcukes-commons</artifactId>
         </dependency>
         <dependency>
             <groupId>io.github.selcukes</groupId>
